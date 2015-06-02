@@ -41,4 +41,5 @@
 
 	<jpa:repositories base-package="vn.co.huypt.isba.repository"
 		entity-manager-factory-ref="emf" transaction-manager-ref="transactionManager" />
+		
 </beans>
