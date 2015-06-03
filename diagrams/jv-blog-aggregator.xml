@@ -11,22 +11,11 @@
 	</entity>
 
 	<entity>
-		<entity-name>vn.co.huypt.isba.entity.Role</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>146</entity-height>
-		<entity-X-Coordinate>161</entity-X-Coordinate>
-		<entity-Y-Coordinate>320</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
 		<entity-name>vn.co.huypt.isba.entity.Item</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>206</entity-height>
-		<entity-X-Coordinate>520</entity-X-Coordinate>
-		<entity-Y-Coordinate>235</entity-Y-Coordinate>
+		<entity-X-Coordinate>640</entity-X-Coordinate>
+		<entity-Y-Coordinate>156</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -36,8 +25,19 @@
 		<entity-name>vn.co.huypt.isba.entity.Blog</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>186</entity-height>
-		<entity-X-Coordinate>280</entity-X-Coordinate>
-		<entity-Y-Coordinate>24</entity-Y-Coordinate>
+		<entity-X-Coordinate>358</entity-X-Coordinate>
+		<entity-Y-Coordinate>34</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>vn.co.huypt.isba.entity.Role</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>146</entity-height>
+		<entity-X-Coordinate>227</entity-X-Coordinate>
+		<entity-Y-Coordinate>364</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
