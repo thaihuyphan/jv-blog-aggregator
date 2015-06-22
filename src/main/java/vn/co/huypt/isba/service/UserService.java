@@ -3,9 +3,16 @@ package vn.co.huypt.isba.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import vn.co.huypt.isba.entity.Blog;
+import vn.co.huypt.isba.entity.Item;
 import vn.co.huypt.isba.entity.User;
+import vn.co.huypt.isba.repository.BlogRepository;
+import vn.co.huypt.isba.repository.ItemRepository;
 import vn.co.huypt.isba.repository.UserRepository;
 
 @Service
@@ -13,6 +20,12 @@ public class UserService {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private BlogRepository blogRepository;
+	
+	@Autowired
+	private ItemRepository itemRepository;
 
 	public List<User> findAll() {
 		return userRepository.findAll();
@@ -20,5 +33,17 @@ public class UserService {
 
 	public User findOne(int id) {
 		return userRepository.findOne(id);
+	}
+
+	@Transactional
+	public User findOneWithBlogs(int id) {
+		User user = userRepository.findOne(id);
+		List<Blog> blogs = blogRepository.findByUser(user);
+		for (Blog blog : blogs) {
+			List<Item> items = itemRepository.findByBlog(blog, new PageRequest(0, 10, Direction.DESC, "publishedDate"));
+			blog.setItems(items);
+		}
+		user.setBlogs(blogs);
+		return user;
 	}
 }
