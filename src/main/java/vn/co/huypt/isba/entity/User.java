@@ -17,7 +17,7 @@ public class User {
 
 	private String name;
 
-	private String mail;
+	private String email;
 
 	private String password;
 
@@ -59,12 +59,12 @@ public class User {
 		this.name = name;
 	}
 
-	public String getMail() {
-		return mail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setMail(String mail) {
-		this.mail = mail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPassword() {
