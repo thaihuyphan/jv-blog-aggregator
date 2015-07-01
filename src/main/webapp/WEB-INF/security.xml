@@ -9,8 +9,10 @@
 	<http>
 		<intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')" />
-		<form-login />
-		<logout />
+		<form-login login-page="/login.html" />
+		<logout logout-url="/logout" />
+		<!-- ... -->
+		<csrf disabled="true"/>
 	</http>
 
 	<authentication-manager>
