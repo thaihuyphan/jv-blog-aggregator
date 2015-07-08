@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
@@ -22,6 +23,7 @@ public class User {
 	private String password;
 
 	@ManyToMany
+	@JoinTable
 	private List<Role> roles;
 
 	@OneToMany(mappedBy = "user")
