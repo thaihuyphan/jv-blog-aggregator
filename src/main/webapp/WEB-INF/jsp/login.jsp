@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <style>
 
 .form-signin {
@@ -43,10 +43,15 @@
 	border-top-right-radius: 0;
 }
 </style>
-
-<form class="form-signin" action="/login" method="POST">
+<c:if test="${not empty param.error}">
+	<font color="red">
+		Login error. <br />
+		Reason : ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+	</font>
+</c:if>
+<form class="form-signin" action='<c:url value="/j_spring_security_check" />' method="POST">
 	<h2 class="form-signin-heading">Please sign in</h2>
-	<input type="text" name="username" id="inputEmail" class="form-control" placeholder="Name" required autofocus> 
-	<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+	<input type="text" name="j_username" class="form-control" placeholder="Name" required autofocus> 
+	<input type="password" name="j_password" class="form-control" placeholder="Password" required>
 	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 </form>

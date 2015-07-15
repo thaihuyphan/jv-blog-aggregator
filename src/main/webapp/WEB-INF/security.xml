@@ -10,19 +10,17 @@
 		<intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')" />
 		<form-login login-page="/login.html" />
 		<logout logout-url="/logout" />
-		<!-- ... -->
-		<csrf disabled="true"/>
 	</http>
 
 	<authentication-manager>
 		<authentication-provider>
-		
+			<password-encoder hash="bcrypt" />
 			 <jdbc-user-service data-source-ref="dataSource"
-				authorities-by-username-query="select user.name, role.name from user
-												join user_role on user.id = user_role.users_id
-												join role on role.id = user_role.roles_id
-												where user.name = ?"
-				users-by-username-query="select name,password,1 from user where name = ?" />
+				authorities-by-username-query="select user_table.name, role.name from user_table
+												join user_table_Role on user_table.id = user_table_Role.users_id
+												join role on role.id = user_table_Role.roles_id
+												where user_table.name = ?"
+				users-by-username-query="select name,password,1 from user_table where name = ?" />
 	
 		</authentication-provider>
 	</authentication-manager>
