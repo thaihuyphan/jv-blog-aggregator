@@ -25,12 +25,13 @@ public class User {
 	@Size(min = 3, message = "Name must be at least 3 character!")
 	private String name;
 
-	@Email
+	@Size(min = 1, message = "Invalid email address!")
+	@Email(message = "Invalid email address!")
 	private String email;
 
 	@Size(min = 5, message = "Password must be at least 5 character!")
 	private String password;
-	
+
 	private boolean enabled;
 
 	@ManyToMany
