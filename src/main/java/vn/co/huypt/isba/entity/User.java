@@ -10,6 +10,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
 
 @Entity
 @Table(name = "user_table")
@@ -19,12 +22,15 @@ public class User {
 	@GeneratedValue
 	private Integer id;
 
+	@Size(min = 3, message = "Name must be at least 3 character!")
 	private String name;
 
+	@Email
 	private String email;
 
+	@Size(min = 5, message = "Password must be at least 5 character!")
 	private String password;
-
+	
 	private boolean enabled;
 
 	@ManyToMany
