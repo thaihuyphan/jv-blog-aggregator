@@ -20,7 +20,7 @@
 												join user_table_Role on user_table.id = user_table_Role.users_id
 												join role on role.id = user_table_Role.roles_id
 												where user_table.name = ?"
-				users-by-username-query="select name,password,1 from user_table where name = ?" />
+				users-by-username-query="select name,password,enabled from user_table where name = ?" />
 	
 		</authentication-provider>
 	</authentication-manager>
