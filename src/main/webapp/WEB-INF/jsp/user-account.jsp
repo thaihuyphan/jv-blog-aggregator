@@ -63,7 +63,7 @@ $(document).ready(function() {
 					},
 					url : {
 						required : true,
-						email : true
+						url : true
 					}
 				},
 				highlight: function(element) {
