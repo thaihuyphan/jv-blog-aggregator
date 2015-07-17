@@ -68,7 +68,7 @@ $(document).ready(function() {
 				<h1>${blog.name}</h1>
 				<p>
 				
-				<a href='<spring:url value="/blog/delete/${blog.id}.html" />' class="btn btn-danger">remove blog</a>
+				<a href='<spring:url value="/blog/remove/${blog.id}.html" />' class="btn btn-danger">remove blog</a>
 				
 				${blog.url}</p>
 

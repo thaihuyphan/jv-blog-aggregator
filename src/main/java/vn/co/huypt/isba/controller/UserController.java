@@ -71,13 +71,13 @@ public class UserController {
 		return "redirect:/account.html";
 	}
 	
-	@RequestMapping("/blog/delete/{id}")
+	@RequestMapping("/blog/remove/{id}")
 	public String removeBlog(@PathVariable int id){
 		blogService.delete(id);
 		return "redirect:/account.html";
 	}
 	
-	@RequestMapping("/users/delete/{id}")
+	@RequestMapping("/users/remove/{id}")
 	public String removeUser(@PathVariable int id){
 		userService.delete(id);
 		return "redirect:/users.html";
