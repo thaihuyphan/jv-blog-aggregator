@@ -18,7 +18,7 @@
 					</a>
 				</td>
 				<td>
-					<a href="<spring:url value="/users/delete/${user.id}.html" />">
+					<a href="<spring:url value="/users/delete/${user.id}.html" />" class="btn btn-danger">
 						remove
 					</a>
 				</td>
