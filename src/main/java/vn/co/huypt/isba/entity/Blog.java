@@ -2,6 +2,7 @@ package vn.co.huypt.isba.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,16 +16,16 @@ public class Blog {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
+
 	private String url;
-	
+
 	private String name;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
-	
-	@OneToMany(mappedBy = "blog")
+
+	@OneToMany(mappedBy = "blog", cascade = CascadeType.REMOVE)
 	private List<Item> items;
 
 	public User getUser() {
