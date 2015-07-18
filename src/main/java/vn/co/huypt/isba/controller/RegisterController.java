@@ -8,6 +8,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import vn.co.huypt.isba.entity.User;
 import vn.co.huypt.isba.service.UserService;
@@ -18,7 +20,7 @@ public class RegisterController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@ModelAttribute("user")
 	public User constructUser() {
 		return new User();
@@ -30,12 +32,18 @@ public class RegisterController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String doRegister(@Valid @ModelAttribute("user") User user,
-			BindingResult result) {
+	public String doRegister(@Valid @ModelAttribute("user") User user, BindingResult result) {
 		if (result.hasErrors()) {
 			return "user-register";
 		}
 		userService.save(user);
 		return "redirect:/register.html?success=true";
+	}
+
+	@RequestMapping("/available")
+	@ResponseBody
+	public String available(@RequestParam String username) {
+		Boolean available = userService.findOne(username) == null;
+		return available.toString();
 	}
 }
