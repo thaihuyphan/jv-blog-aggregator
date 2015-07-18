@@ -1,5 +1,6 @@
 package vn.co.huypt.isba.service;
 
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
 
 import org.springframework.stereotype.Service;
 
@@ -25,7 +27,15 @@ import vn.co.huypt.isba.rss.TRssItem;
 @Service
 public class RssService {
 
-	public List<Item> getItems(Source source) throws RssException {
+	public List<Item> getItems(File file) throws RssException {
+		return this.getItems(new StreamSource(file));
+	}
+
+	public List<Item> getItems(String url) throws RssException {
+		return this.getItems(new StreamSource(url));
+	}
+
+	private List<Item> getItems(Source source) throws RssException {
 		ArrayList<Item> list = new ArrayList<Item>();
 		try {
 			JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
