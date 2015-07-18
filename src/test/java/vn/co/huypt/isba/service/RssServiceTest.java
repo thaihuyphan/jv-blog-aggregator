@@ -26,8 +26,8 @@ public class RssServiceTest {
 		List<Item> items = rssService.getItems(new File("test-rss/javavids.xml"));
 		assertEquals(10, items.size());
 		Item firstItem = items.get(0);
-		assertEquals("How to generate web.xml in Eclipse", firstItem.getTitle());
-		assertEquals("23 03 2014 09:01:34", new SimpleDateFormat("dd MM yyyy HH:mm:ss").format(firstItem.getPublishedDate()));
+		assertEquals("How to solve Source not found error during debug in Eclipse", firstItem.getTitle());
+		assertEquals("23 06 2014 03:35:49", new SimpleDateFormat("dd MM yyyy HH:mm:ss").format(firstItem.getPublishedDate()));
 	}
 
 }
