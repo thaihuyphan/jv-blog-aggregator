@@ -1,7 +1,6 @@
 package vn.co.huypt.isba.service;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -12,11 +11,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import vn.co.huypt.isba.entity.Blog;
-import vn.co.huypt.isba.entity.Item;
 import vn.co.huypt.isba.entity.Role;
 import vn.co.huypt.isba.entity.User;
 import vn.co.huypt.isba.repository.BlogRepository;
-import vn.co.huypt.isba.repository.ItemRepository;
 import vn.co.huypt.isba.repository.RoleRepository;
 import vn.co.huypt.isba.repository.UserRepository;
 
@@ -30,8 +27,8 @@ public class InitDbService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	@Autowired
-	private ItemRepository itemRepository;
+//	@Autowired
+//	private ItemRepository itemRepository;
 	
 	@Autowired
 	private BlogRepository blogRepository;
@@ -63,19 +60,19 @@ public class InitDbService {
 		blogJavavids.setUser(userAdmin);
 		blogRepository.save(blogJavavids);
 		
-		Item item1 = new Item();
-		item1.setBlog(blogJavavids);
-		item1.setTitle("first");
-		item1.setLink("http://www.javavids.com");
-		item1.setPublishedDate(new Date());
-		itemRepository.save(item1);
-		
-		Item item2 = new Item();
-		item2.setBlog(blogJavavids);
-		item2.setTitle("second");
-		item2.setLink("http://www.javavids.com");
-		item2.setPublishedDate(new Date());
-		itemRepository.save(item2);
+//		Item item1 = new Item();
+//		item1.setBlog(blogJavavids);
+//		item1.setTitle("first");
+//		item1.setLink("http://www.javavids.com");
+//		item1.setPublishedDate(new Date());
+//		itemRepository.save(item1);
+//		
+//		Item item2 = new Item();
+//		item2.setBlog(blogJavavids);
+//		item2.setTitle("second");
+//		item2.setLink("http://www.javavids.com");
+//		item2.setPublishedDate(new Date());
+//		itemRepository.save(item2);
 		
 	}
 }
