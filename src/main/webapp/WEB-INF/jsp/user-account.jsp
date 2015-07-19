@@ -107,7 +107,7 @@ $(document).ready(function() {
 					<tbody>
 						<c:forEach items="${blog.items}" var="item">
 							<tr>
-								<td>${item.publishedDate}</td>
+								<td><c:out value="${item.publishedDate}" /></td>
 								<td>
 									<strong>
 										<a href='<c:out value="${item.link}" />' target="_blank" >
